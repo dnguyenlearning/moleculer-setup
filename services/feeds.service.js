@@ -33,8 +33,14 @@ module.exports = {
 			}
 		}
 	},
-		
+	created(){
+
+	},
+	events: {
+
+	},
+
 	methods: {
-			
+
 	}
 };

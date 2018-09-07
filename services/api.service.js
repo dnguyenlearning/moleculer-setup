@@ -2,13 +2,13 @@ const _ = require("lodash");
 const ApiGateway = require("moleculer-web");
 
 const logger = require("../middlewares/logger");
-
+const config = require('../config');
 module.exports = {
 	name: "api",
 	mixins: [ApiGateway],
 
 	settings: {
-		port: process.env.PORT || 3000,
+		port: config.settings.PORT,
 		routes: [
 			{
 				path: "/api",
@@ -69,12 +69,16 @@ module.exports = {
 	},
 		
 	actions: {
-		test(ctx) {
-			return "for testing purpose";
+		async test(ctx) {
+			const feedList = await ctx.call("feed.list");
+			return "for testing purpose ";
 		},
+	},
+	events: {
+
 	},
 		
 	created() {
-		// Pointer to the original function
+		console.log('api service created')
 	}
 };

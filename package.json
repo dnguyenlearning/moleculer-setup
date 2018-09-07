@@ -1,0 +1,59 @@
+{
+  "name": "xpo-curator-api",
+  "version": "0.1.0",
+  "description": "xpo curator api",
+  "main": "index.js",
+  "scripts": {
+    "dev": "moleculer-runner --config moleculer.config.js --repl --hot services",
+    "start": "node index.js",
+    "deps": "npm-check -u",
+    "ci": "jest --watch",
+    "test": "jest --coverage",
+    "lint": "eslint services --fix",
+    "docker:build": "docker build -t xpo-curator-api ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/knorexteam/xpo-curator-api.git"
+  },
+  "keywords": [
+    "curator",
+    "api",
+    "backend",
+    "moleculer",
+    "http2"
+  ],
+  "author": "Lam Do",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/knorexteam/xpo-curator-api#readme",
+  "devDependencies": {
+    "eslint": "5.0.1",
+    "jest": "23.3.0",
+    "jest-cli": "23.3.0",
+    "moleculer-repl": "0.5.0",
+    "npm-check": "5.7.1"
+  },
+  "dependencies": {
+    "bcrypt": "2.0.1",
+    "ioredis": "3.2.2",
+    "jsonwebtoken": "8.3.0",
+    "lodash": "4.17.10",
+    "moleculer": "0.13.0",
+    "moleculer-console-tracer": "0.1.1",
+    "moleculer-db": "0.7.3",
+    "moleculer-db-adapter-mongo": "0.4.0",
+    "moleculer-mail": "1.2.1",
+    "moleculer-web": "0.8.0",
+    "slug": "0.9.1"
+  },
+  "engines": {
+    "node": ">= 6.x.x"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "rootDir": "./services",
+    "roots": [
+      "../test"
+    ]
+  }
+}
